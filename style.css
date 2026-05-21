@@ -195,6 +195,7 @@ body {
 }
 
 /* Hero */
+/* Hero */
 .hero {
     padding: 5rem 0 4rem;
     background: linear-gradient(145deg, #f9faff 0%, #ffffff 100%);
@@ -283,6 +284,18 @@ body {
     .hero-container {
         flex-direction: column;
         text-align: center;
+    }
+
+    .hero-visual {
+        order: -1;
+    }
+
+    .hero-desc {
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
     }
 
     .hero-photo {
