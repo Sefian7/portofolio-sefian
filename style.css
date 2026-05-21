@@ -206,6 +206,7 @@ body {
     justify-content: space-between;
     gap: 3rem;
     flex-wrap: wrap;
+    
 }
 
 .hero-content {
@@ -274,6 +275,21 @@ body {
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-photo {
+        width: 200px;
+        height: 200px;
+    }
+
 }
 
 /* About Section */
