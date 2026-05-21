@@ -530,6 +530,7 @@ body {
     position: fixed;
     top: 70px;
     right: -100%;
+    left: auto;
     width: 80%;
     height: calc(100vh - 70px);
     background: white;
@@ -544,9 +545,10 @@ body {
     }
     
     .nav-menu {
-        flex-direction: column;
-        padding: 2rem;
-        gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
     }
     
     .hero-title {
