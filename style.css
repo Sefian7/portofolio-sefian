@@ -194,6 +194,32 @@ body {
     color: var(--dark);
 }
 
+@media (max-width: 768px) {
+
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+        transition: 0.3s ease;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+}
+
 /* Hero */
 .hero {
     padding: 5rem 0 4rem;
