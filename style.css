@@ -281,7 +281,7 @@ body {
 @media (max-width: 768px) {
 
     .hero-container {
-        flex-direction: column-reverse;
+        flex-direction: column;
         text-align: center;
     }
 
