@@ -232,6 +232,7 @@ body {
 
 .hero-desc {
     font-size: 1.1rem;
+    text-align: justify;
     color: var(--gray-600);
     margin-bottom: 2rem;
     max-width: 500px;
@@ -267,6 +268,14 @@ body {
     100% { transform: translateY(0px); }
 }
 
+.hero-photo {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
 /* About Section */
 .about {
     padding: 5rem 0;
@@ -286,6 +295,10 @@ body {
     border-radius: 28px;
     transition: var(--transition);
     text-align: center;
+}
+
+.teks-about-card {
+    text-align: justify;
 }
 
 .about-card:hover {
