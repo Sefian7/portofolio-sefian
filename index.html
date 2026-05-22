@@ -1,233 +1,287 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Portofolio pengembang web kreatif - Menampilkan proyek dan keahlian">
-    <title>Sefian Syakir Alabid | Portofolio</title>
-    
-    <!-- Google Fonts & Font Awesome -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <!-- CSS Utama -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Sefian Syakir Alabid | Portofolio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome 6 (gratis) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Header & Navigasi -->
-    <header class="header" id="header">
-        <div class="container header-container">
-            <a href="#" class="logo">Sefian<span class="logo-accent"> | Portofolio</span></a>
-            
-            <button class="mobile-nav-toggle" id="mobileToggle" aria-label="Menu navigasi" aria-expanded="false">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <nav class="navbar" id="navbar">
-                <ul class="nav-menu">
-                    <li class="nav-item"><a href="#home" class="nav-link active-nav">Beranda</a></li>
-                    <li class="nav-item"><a href="#about" class="nav-link">Tentang</a></li>
-                    <li class="nav-item"><a href="#projects" class="nav-link">Proyek</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Kontak</a></li>
-                </ul>
-            </nav>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fas fa-code"></i>
+        <span>Sefian | Portofolio</span>
+      </div>
+      <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#services" class="nav-link">Service</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Project</a></li>
+        <li><a href="#journey" class="nav-link">Journey</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><button class="hireme-nav" id="hireNavBtn">Hire Me</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ==================== HOME SECTION ==================== -->
+    <section id="home" class="section home">
+      <div class="home-container">
+        <div class="home-left">
+          <span class="hello-there">👋 Hello there</span>
+          <h1 class="name-title">Sefian Syakir Alabid</h1>
+          <p class="home-desc">Saya seorang pengembang web & UI/UX enthusiast yang berdedikasi menciptakan solusi digital inovatif dan pengalaman pengguna yang luar biasa.</p>
+          <div class="home-buttons">
+            <button class="btn primary" id="viewProjectBtn">View My Project</button>
+            <button class="btn secondary" id="hireHomeBtn">Hire Me</button>
+          </div>
         </div>
-    </header>
-
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <span class="hero-badge">Halo, everyone!</span>
-                    <h1 class="hero-title">
-                        <span class="text-gradient">Sefian Syakir Alabid</span><br>
-                        Web Developer
-                    </h1>
-                    <p class="hero-desc">
-                        Saya adalah mahasiswa IT yang tertarik pada pengembangan website, UI/UX design, dan teknologi digital. Saya juga senang mengeksplorasi konsep vibe coding untuk menciptakan tampilan web yang modern, responsif, dan menarik dengan pendekatan kreatif dan efisien.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">Lihat Proyek <i class="fas fa-arrow-right"></i></a>
-                        <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                <img src="foto-sefian.jpg" alt="Foto Sefian" class="hero-photo">
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">My Journey</span>
-                    <h2 class="section-title">Tentang <span class="text-gradient">Saya</span></h2>
-                    <div class="section-divider"></div>
-                </div>
-                <div class="about-grid">
-                    <div class="about-card">
-                        <div class="about-icon">
-                            <i class="fas fa-user-astronaut"></i>
-                        </div>
-                        <h3>Tentang Saya</h3>
-                        <p class="teks-about-card">Saya adalah mahasiswa Sistem Informasi di Sekolah Tinggi Ilmu Komputer Cipta Karya Informatika yang tertarik pada web development dan desain antarmuka modern. Saya senang membuat website yang responsif, menarik, dan mudah digunakan.</p>
-                    </div>
-                    <div class="about-card">
-                        <div class="about-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <h3>Keahlian Utama</h3>
-                        <div class="skills-list">
-                            <span>HTML5 & CSS3</span>
-                            <span>JavaScript</span>
-                            <span>React.js</span>
-                            <span>Tailwind</span>
-                            <span>Bootstrap</span>
-                            <span>Figma</span>
-                            <span>Python</span>
-                        </div>
-                    </div>
-                    <div class="about-card">
-                        <div class="about-icon">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <h3>Tujuan Karier</h3>
-                        <p class="teks-about-card">Saya ingin berkembang sebagai web developer yang mampu membangun website modern, responsif, dan bermanfaat, serta terus meningkatkan kemampuan di bidang teknologi dan pengembangan sistem.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="projects">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">Karya Terbaru</span>
-                    <h2 class="section-title">Proyek <span class="text-gradient">Unggulan</span></h2>
-                    <div class="section-divider"></div>
-                </div>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-img-wrapper">
-                            <i class="fas fa-cloud-sun project-icon"></i>
-                        </div>
-                        <div class="project-info">
-                            <h3>Landing Page Travel</h3>
-                            <p>Landing page travel modern dan responsif untuk menampilkan paket wisata dengan tampilan yang menarik dan interaktif.</p>
-                            <div class="project-tech">
-                                <span>HTML</span><span>CSS</span><span>JavaScript</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://sefian7.github.io/subavanatravel/" class="project-link">Live Demo <i class="fas fa-external-link-alt"></i></a>
-                                <a href="https://github.com/Sefian7/subavanatravel" class="project-link">GitHub <i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-img-wrapper">
-                            <i class="fas fa-store project-icon"></i>
-                        </div>
-                        <div class="project-info">
-                            <h3>E-Commerce UI Modern</h3>
-                            <p>Landing page untuk brand fesyen dengan filter produk, keranjang interaktif, dan desain mobile-first.</p>
-                            <div class="project-tech">
-                                <span>React</span><span>Tailwind</span><span>Context API</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link">Live Demo <i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-link">GitHub <i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-img-wrapper">
-                            <i class="fas fa-tasks project-icon"></i>
-                        </div>
-                        <div class="project-info">
-                            <h3>TaskFlow Manager</h3>
-                            <p>Aplikasi manajemen tugas dengan drag-and-drop, dark mode, dan penyimpanan localStorage.</p>
-                            <div class="project-tech">
-                                <span>Vue.js</span><span>SCSS</span><span>Vite</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link">Live Demo <i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-link">GitHub <i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="projects-cta">
-                    <a href="#" class="btn btn-secondary">Lihat Semua Proyek <i class="fas fa-long-arrow-alt-right"></i></a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">Jaringan & Kolaborasi</span>
-                    <h2 class="section-title">Hubungi <span class="text-gradient">Saya</span></h2>
-                    <div class="section-divider"></div>
-                </div>
-                <div class="contact-wrapper">
-                    <div class="contact-info">
-                        <div class="contact-detail">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <p>sefianalabid3@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-detail">
-                            <i class="fab fa-linkedin"></i>
-                            <div>
-                                <h4>LinkedIn</h4>
-                                <p>/in/sefiansyakir</p>
-                            </div>
-                        </div>
-                        <div class="contact-detail">
-                            <i class="fab fa-github"></i>
-                            <div>
-                                <h4>GitHub</h4>
-                                <p>Sefian7</p>
-                            </div>
-                        </div>
-                        <div class="contact-social">
-                            <a href="https://www.instagram.com/sfiansyakirrr?igsh=dGxjZGp1dnE2ODV4" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="https://wa.me/6285782232410" aria-label="Whatsapp"><i class="fab fa-whatsapp"></i></a>
-                        </div>
-                    </div>
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-group">
-                            <input type="text" id="name" placeholder="Nama lengkap" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" placeholder="Alamat email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" rows="5" placeholder="Tulis pesan Anda..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary submit-btn">Kirim Pesan <i class="fas fa-paper-plane"></i></button>
-                        <p id="formFeedback" class="form-feedback"></p>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-container">
-            <p>&copy; 2025 Sefian Syakir Alabid <!--<i class="fas fa-heart"></i>--> </p>
+        <div class="home-right">
+          <div class="photo-frame">
+            <img src="foto-sefian.jpg" alt="Sefian Portrait">
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    <!-- ==================== SERVICE SECTION ==================== -->
+    <section id="services" class="section services">
+      <div class="container">
+        <h2 class="section-title">Layanan Saya</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <i class="fas fa-paint-brush"></i>
+            <h3>UI/UX Design</h3>
+            <p>Desain antarmuka modern, user flow, prototype hingga siap implementasi.</p>
+            <button class="btn learn-more">Learn More</button>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-code"></i>
+            <h3>Web Developer</h3>
+            <p>Pengembangan website responsif, performa cepat, dan interaktif.</p>
+            <button class="btn learn-more">Learn More</button>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>Data Analyst</h3>
+            <p>Analisis data, visualisasi, dan insight untuk keputusan bisnis.</p>
+            <button class="btn learn-more">Learn More</button>
+          </div>
+        </div>
+        <div class="view-all-wrapper">
+          <button class="btn outline" id="viewAllServiceBtn">View All Service →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section id="about" class="section about">
+      <div class="container about-container">
+        <div class="about-img">
+          <div class="photo-frame about-frame">
+            <img src="foto-sefian.jpg" alt="About Sefian">
+          </div>
+        </div>
+        <div class="about-content">
+          <h3 class="about-label">About Me</h3>
+          <h2>Who is Sefian Syakir Alabid?</h2>
+          <p>Saya seorang pengembang web dan desainer yang berfokus pada teknologi modern. Dengan pengalaman lebih dari 2 tahun di industri, saya membantu klien membangun identitas digital yang kuat dan fungsional.</p>
+          <div class="about-stats">
+            <div class="stat"><strong>10+</strong> <span>Projects</span></div>
+            <div class="stat"><strong>2+</strong> <span>Years Experience</span></div>
+          </div>
+          <button class="btn primary" id="downloadCvBtn">Download CV <i class="fas fa-download"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SKILLS SECTION ==================== -->
+    <section id="skills" class="section skills">
+      <div class="container">
+        <div class="skills-header">
+          <p class="skills-sub">My Skills</p>
+          <h2>Exploring the skills</h2>
+          <p class="skills-tagline">Behind my skills</p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <i class="fab fa-html5"></i>
+            <span class="skill-name">HTML5</span>
+            <div class="skill-percent">90%</div>
+            <div class="progress-bar"><div class="progress" style="width:90%"></div></div>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-css3-alt"></i>
+            <span class="skill-name">CSS3</span>
+            <div class="skill-percent">85%</div>
+            <div class="progress-bar"><div class="progress" style="width:85%"></div></div>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-js"></i>
+            <span class="skill-name">JavaScript</span>
+            <div class="skill-percent">80%</div>
+            <div class="progress-bar"><div class="progress" style="width:80%"></div></div>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-figma"></i>
+            <span class="skill-name">Figma</span>
+            <div class="skill-percent">75%</div>
+            <div class="progress-bar"><div class="progress" style="width:75%"></div></div>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-php"></i>
+            <span class="skill-name">PHP</span>
+            <div class="skill-percent">70%</div>
+            <div class="progress-bar"><div class="progress" style="width:70%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROJECT SECTION ==================== -->
+    <section id="projects" class="section projects">
+      <div class="container">
+        <div class="projects-header">
+          <h2>My Latest Project</h2>
+          <button class="btn outline" id="viewAllProjectsBtn">View All Project →</button>
+        </div>
+        <div class="projects-grid">
+          <div class="project-card">
+            <img src="https://picsum.photos/id/26/400/250" alt="project1">
+            <div class="project-tags">
+              <span>UI/UX Design</span>
+              <span>App Design</span>
+            </div>
+            <h3>Fintech Dashboard</h3>
+            <button class="btn view-project">View Project</button>
+          </div>
+          <div class="project-card">
+            <img src="https://picsum.photos/id/0/400/250" alt="project2">
+            <div class="project-tags">
+              <span>Wireframe</span>
+              <span>Web Development</span>
+            </div>
+            <h3>Travelly App</h3>
+            <button class="btn view-project">View Project</button>
+          </div>
+          <div class="project-card">
+            <img src="https://picsum.photos/id/20/400/250" alt="project3">
+            <div class="project-tags">
+              <span>App Design</span>
+              <span>UI/UX Design</span>
+            </div>
+            <h3>Eco Commerce</h3>
+            <button class="btn view-project">View Project</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== JOURNEY SECTION ==================== -->
+    <section id="journey" class="section journey">
+      <div class="container">
+        <h2 class="section-title">Education & Work</h2>
+        <div class="journey-grid">
+          <div class="journey-card left">
+            <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+            <div class="timeline-item">
+              <span class="year">2025 - 2029</span>
+              <h4>S1 Ilmu Komputer CKI</h4>
+              <p>Information Systems</p>
+            </div>
+            <div class="timeline-item">
+              <span class="year">2021 - 2024</span>
+              <h4>SMKN 8 Jakarta</h4>
+              <p>Tourism Business</p>
+            </div>
+          </div>
+          <div class="journey-card right">
+            <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
+            <div class="timeline-item">
+              <span class="year">2024 - 2025</span>
+              <h4>Aldo Tour & Travel</h4>
+              <p>Tour Consultant</p>
+            </div>
+            <div class="timeline-item">
+              <span class="year">2023 - 2024</span>
+              <h4>Expedition Nusantara</h4>
+              <p>Tour Leader</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section id="contact" class="section contact">
+      <div class="container contact-wrapper">
+        <div class="contact-info">
+          <h3>Contact Us</h3>
+          <ul class="contact-list">
+            <li><i class="fab fa-whatsapp"></i> +62 812 3455 678</li>
+            <li><i class="fab fa-instagram"></i> sfiansyakirrr</li>
+            <li><i class="fab fa-linkedin"></i> sefian syakir</li>
+            <li><i class="fas fa-envelope"></i> sefian.alabid3@gmail.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> Jakarta Selatan, Indonesia</li>
+          </ul>
+        </div>
+        <div class="contact-form">
+          <form id="contactForm">
+            <input type="text" placeholder="Your Name" id="name" required>
+            <input type="email" placeholder="Email" id="email" required>
+            <input type="tel" placeholder="Phone Number" id="phone">
+            <input type="text" placeholder="From (City/Company)" id="from">
+            <textarea rows="4" placeholder="Your Message" id="message" required></textarea>
+            <button type="submit" class="btn primary">Submit <i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>Let's Connect There</h3>
+        <p>Sefian Syakir Alabid — <span>Membangun solusi digital kreatif & inovatif.</span></p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Service</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Project</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fas fa-envelope"></i> sefian.alabid3@gmail.com</p>
+        <p><i class="fas fa-phone-alt"></i> +62 812 3455 678</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Sefian Syakir Alabid | Portofolio</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

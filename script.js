@@ -1,135 +1,130 @@
-// ===== DOM Elements =====
-const mobileToggle = document.getElementById('mobileToggle');
-const navbar = document.getElementById('navbar');
-const navLinks = document.querySelectorAll('.nav-link');
-const sections = document.querySelectorAll('section');
+// ==================== MOBILE MENU TOGGLE ====================
+const mobileMenu = document.getElementById('mobile-menu');
+const navMenu = document.querySelector('.nav-menu');
+
+if (mobileMenu) {
+  mobileMenu.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+}
+
+// Tutup menu saat link diklik
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+  });
+});
+
+// ==================== SMOOTH SCROLL & NAV BUTTONS ====================
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+// Tombol Hire Me (navbar & home)
+const hireNav = document.getElementById('hireNavBtn');
+const hireHome = document.getElementById('hireHomeBtn');
+if (hireNav) hireNav.addEventListener('click', () => scrollToSection('contact'));
+if (hireHome) hireHome.addEventListener('click', () => scrollToSection('contact'));
+
+// View My Project -> scroll ke project
+const viewProjectBtn = document.getElementById('viewProjectBtn');
+if (viewProjectBtn) viewProjectBtn.addEventListener('click', () => scrollToSection('projects'));
+
+// View All Service -> alert sederhana dan scroll ke service (optional)
+const viewAllService = document.getElementById('viewAllServiceBtn');
+if (viewAllService) {
+  viewAllService.addEventListener('click', () => {
+    alert("Tersedia 3 layanan utama: UI/UX, Web Dev, Data Analyst. Untuk konsultasi silakan hubungi kontak.");
+    scrollToSection('services');
+  });
+}
+
+// View All Project (tombol di project header)
+const viewAllProjects = document.getElementById('viewAllProjectsBtn');
+if (viewAllProjects) {
+  viewAllProjects.addEventListener('click', () => {
+    alert("Menampilkan 3 proyek terbaru. Lihat portofolio lengkap segera hadir!");
+  });
+}
+
+// Tombol Learn More pada service cards
+const learnButtons = document.querySelectorAll('.learn-more');
+learnButtons.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const card = btn.closest('.service-card');
+    const serviceName = card.querySelector('h3')?.innerText || 'Layanan';
+    alert(`Detail lebih lanjut tentang ${serviceName}. Hubungi saya untuk informasi lengkap.`);
+  });
+});
+
+// Tombol View Project di project cards
+const viewProjectBtns = document.querySelectorAll('.view-project');
+viewProjectBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    alert("Demo project: Silakan hubungi untuk melihat full case study.");
+  });
+});
+
+// Download CV (simulasi)
+const downloadBtn = document.getElementById('downloadCvBtn');
+if (downloadBtn) {
+  downloadBtn.addEventListener('click', () => {
+    // Membuat file dummy untuk diunduh
+    const link = document.createElement('a');
+    link.href = 'data:application/octet-stream;base64,SGVyZSBpcyB5b3VyIFNWIFRlc3QgKENWKSAtIFNlZmlhbiBTeWFraXIgQWxhYmlkIC0gUG9ydGZvbGlvIERlbW8=';
+    link.download = 'CV_Sefian_Syakir.pdf';
+    link.click();
+    alert("CV sample akan diunduh (demo).");
+  });
+}
+
+// ==================== FORM SUBMIT HANDLER ====================
 const contactForm = document.getElementById('contactForm');
-const formFeedback = document.getElementById('formFeedback');
-
-// ===== Mobile Menu Toggle =====
-function toggleMobileMenu() {
-    navbar.classList.toggle('active-navbar');
-    const expanded = navbar.classList.contains('active-navbar');
-    mobileToggle.setAttribute('aria-expanded', expanded);
-    // Ubah icon hamburger / close
-    const icon = mobileToggle.querySelector('i');
-    if (expanded) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-    } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-    }
-}
-
-mobileToggle.addEventListener('click', toggleMobileMenu);
-
-// Tutup mobile menu saat link diklik
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        if (navbar.classList.contains('active-navbar')) {
-            toggleMobileMenu();
-        }
-    });
-});
-
-// ===== Active Navigation based on scroll =====
-function handleActiveNav() {
-    let current = '';
-    const scrollPos = window.scrollY + 150; // offset
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active-nav');
-        const href = link.getAttribute('href').substring(1);
-        if (href === current) {
-            link.classList.add('active-nav');
-        }
-    });
-}
-
-window.addEventListener('scroll', handleActiveNav);
-window.addEventListener('load', handleActiveNav);
-
-// ===== Smooth scroll dengan CSS sudah ada, tapi perbaiki klik pada tombol CTA =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            e.preventDefault();
-            targetElement.scrollIntoView({
-                behavior: 'smooth'
-            });
-            // Tutup mobile menu jika terbuka
-            if (navbar.classList.contains('active-navbar')) {
-                toggleMobileMenu();
-            }
-        }
-    });
-});
-
-// ===== Form Submit Handling (Demo) =====
-contactForm.addEventListener('submit', (e) => {
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-
+    const name = document.getElementById('name')?.value.trim();
+    const email = document.getElementById('email')?.value.trim();
+    const message = document.getElementById('message')?.value.trim();
     if (!name || !email || !message) {
-        formFeedback.textContent = 'Harap isi semua bidang!';
-        formFeedback.style.color = '#e53e3e';
-        setTimeout(() => { formFeedback.textContent = ''; }, 2500);
-        return;
+      alert("Harap isi nama, email, dan pesan.");
+      return;
     }
-
-    if (!email.includes('@') || !email.includes('.')) {
-        formFeedback.textContent = 'Masukkan email yang valid.';
-        formFeedback.style.color = '#e53e3e';
-        setTimeout(() => { formFeedback.textContent = ''; }, 2500);
-        return;
-    }
-
-    // Simulasi pengiriman sukses
-    formFeedback.textContent = `Terima kasih ${name}! Pesan Anda telah terkirim.`;
-    formFeedback.style.color = '#4c51bf';
+    alert(`Terima kasih ${name}, pesan Anda telah terkirim! Kami akan membalas ke ${email}`);
     contactForm.reset();
-    setTimeout(() => {
-        formFeedback.textContent = '';
-    }, 4000);
+  });
+}
+
+// Optional: Menambahkan efek aktif pada navbar saat scroll (tidak wajib tapi membantu)
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-link');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    const sectionHeight = section.clientHeight;
+    if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+      current = section.getAttribute('id');
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active');
+    }
+  });
 });
 
-// ===== Efek tambahan: Hover interaktif ringan untuk skill dan card =====
-const cards = document.querySelectorAll('.about-card, .project-card');
-cards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.transition = 'transform 0.25s ease, box-shadow 0.3s';
-    });
-});
-
-// ===== Intersection Observer untuk fade-in (opsional) =====
-const fadeElements = document.querySelectorAll('.about-card, .project-card, .hero-content, .contact-wrapper');
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            observer.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.1 });
-
-fadeElements.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(el);
-});
+// Tambahan styling untuk active link di navbar
+const style = document.createElement('style');
+style.textContent = `
+  .nav-link.active {
+    color: #2563eb !important;
+    font-weight: 700;
+  }
+`;
+document.head.appendChild(style);
