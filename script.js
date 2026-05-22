@@ -61,12 +61,12 @@ learnButtons.forEach(btn => {
 });
 
 // Tombol View Project di project cards
-const viewProjectBtns = document.querySelectorAll('.view-project');
-viewProjectBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    alert("Demo project: Silakan hubungi untuk melihat full case study.");
-  });
-});
+// const viewProjectBtns = document.querySelectorAll('.view-project');
+// viewProjectBtns.forEach(btn => {
+  //btn.addEventListener('click', () => {
+    //alert("Demo project: Silakan hubungi untuk melihat full case study.");
+  //});
+//});
 
 // Download CV (simulasi)
 const downloadBtn = document.getElementById('downloadCvBtn');
