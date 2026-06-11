@@ -406,7 +406,29 @@ body {
   padding: 6px 20px;
   font-size: 0.8rem;
   color: black;
+  background-color: white;
 }
+
+.view-project:hover {
+  margin: 16px 20px 24px;
+  border: 1px solid #cbd5e1;
+  border-radius: 40px;
+  padding: 6px 20px;
+  font-size: 0.8rem;
+  color: white;
+  background-color: blue;
+}
+
+.link-project {
+  text-decoration: none;
+  color: black;
+}
+
+.link-project:hover {
+  text-decoration: none;
+  color: white;
+}
+
 
 /* JOURNEY */
 .journey-grid {
